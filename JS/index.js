@@ -1,4 +1,4 @@
-//Function for validation
+//---Function for validation
 const Validation = (callback) => 
 {
     
@@ -28,6 +28,7 @@ const Validation = (callback) =>
    
     callback(msg);
 }
+
 //Function for navigation to next page(callback)
 function Navigate(value)
 {
