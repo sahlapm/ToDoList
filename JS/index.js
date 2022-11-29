@@ -1,25 +1,46 @@
 //Function for validation
 const Validation = (callback) => 
 {
-    var isVerified = false;
+    
+    var msg='';
     var username = document.getElementById('username').value.trim();
     var password = document.getElementById('password').value.trim();
-    if (username == 'admin' && password == '12345') {
-        isVerified = true;
+    if (username == 'admin' && password == '12345') 
+    {
+       msg='verified';
     }
-    callback(isVerified);
+    else if (username == '' && password == '')
+    {
+        msg='Username and Password required';
+    }
+    else  if (username == '')
+    {
+        msg='Username required';
+    }
+    else  if (password == '')
+    {
+        msg='Password required';
+    }
+    else
+    {
+        msg='Invalid login credentials';
+    }
+   
+    callback(msg);
 }
 //Function for navigation to next page(callback)
 function Navigate(value)
 {
-    if (value == true) 
+   if (value == 'verified') 
     {
         window.location.href = 'todolist.html';
     }
-    else 
+    else if(value!='')
     {
-        alert('Invalid login credentials');
+        alert(value);
     }
+   
+   
 }
 
 // Function to fetch items from given URL(ajax call)
